@@ -1,0 +1,8 @@
+on: [repository_dispatch]
+name: Test
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - run: env
+
