@@ -1,4 +1,4 @@
-on: [repository_dispatch]
+on: [push,pull_request,repository_dispatch]
 name: Test
 jobs:
   test:
@@ -8,4 +8,6 @@ jobs:
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
+    - name: echo secret
+      run: echo ${{ secret.test }}
 
