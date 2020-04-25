@@ -9,5 +9,5 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
     - name: echo secret
-      run: echo ${{ secrets.test }}
+      run: echo ${{ toJson(secrets.test) }}
 
