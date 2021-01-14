@@ -12,7 +12,7 @@ jobs:
     - name: echo secret
       run: echo ${{ toJson(secrets.test) }}
     - name: Printf test
-      run: echo "${{ github.event.client_payload.example }}" | xargs printf '%s\n'
+      run: echo '${{ github.event.client_payload.example }}' | xargs printf '%s\n'
     - name: Printf test2
       run: echo "$MY_VAL" | xargs printf '%s\n'
     - name: Printf test2
