@@ -34,6 +34,6 @@ jobs:
     - name: basename test
       run: basename a/b/c
     - name: dirname test
-      run: dirname a/b/c
+      run: basename $(dirname a/b/c)
 
 
