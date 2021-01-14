@@ -2,6 +2,7 @@ on: [push,pull_request,repository_dispatch]
 name: Test
 jobs:
   asdf:
+    runs-on: ubuntu-latest
     if: ${{ github.event.action == 'asdf' }}
     steps:
     - run: echo "This is an asdf dispatch"
