@@ -7,7 +7,6 @@ jobs:
     - name: Dump
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
-        MY_VAL: ${{ github.event.client_payload.example }}
       run: echo "$GITHUB_CONTEXT"
     - name: echo secret
       run: echo ${{ toJson(secrets.test) }}
@@ -15,6 +14,8 @@ jobs:
       run: echo '${{ github.event.client_payload.example }}' | xargs printf '%s\n'
     - name: Printf test2
       run: echo "$MY_VAL" | xargs printf '%s\n'
+      env:
+        MY_VAL: ${{ github.event.client_payload.example }}
     - name: Printf test2
       run: echo "hello \"world today\"" | xargs printf '%s\n'
 
