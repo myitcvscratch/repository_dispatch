@@ -31,5 +31,9 @@ jobs:
         MY_VAL: ${{ github.event.client_payload.example }}
     - name: Printf test2
       run: echo "hello \"world today\"" | xargs printf '%s\n'
+    - name: basename test
+      run: basename a/b/c
+    - name: basename dir test
+      run: dir $(basename a/b/c)
 
 
