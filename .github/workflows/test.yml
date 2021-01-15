@@ -6,6 +6,7 @@ jobs:
     if: ${{ github.event.action == 'asdf' }}
     steps:
     - run: echo "This is an asdf dispatch"
+    - run: false
   test:
     strategy:
       fail-fast: false
