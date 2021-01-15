@@ -21,9 +21,7 @@ jobs:
         shell: bash
     steps:
     - name: Set branch output variable
-      id: setbranch
-      run: echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
-    - run: echo "Branch is ${{ steps.setbranch.branch }}"
+      run: echo "${GITHUB_REF#refs/heads/}"
     - name: Dump
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
