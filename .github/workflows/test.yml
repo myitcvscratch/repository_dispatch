@@ -18,7 +18,7 @@ jobs:
     needs: asdf
     steps:
     - name: setbranch
-      run: echo "${GITHUB_REF%refs/heads/}"
+      run: echo "${GITHUB_REF#refs/heads/}"
     - run: echo "Branch is ${{ steps.setbranch.branch }}"
     - name: Dump
       env:
