@@ -15,7 +15,7 @@ jobs:
         - ubuntu-latest
         - macos-latest
         - windows-latest
-    if: ${{ always() }}
+    if: ${{ 'a' == 'b' && always() }}
     runs-on: ${{ matrix.os }}
     needs: asdf
     steps:
