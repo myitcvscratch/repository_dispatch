@@ -7,7 +7,7 @@ jobs:
     steps:
     - run: echo "This is an asdf dispatch"
     - name: setbranch
-      run: echo "::set-output name=branch::${GITHUB_REF%refs/heads/}"
+      run: echo "${GITHUB_REF%refs/heads/}"
     - run: echo "Branch is ${{ steps.setbranch.branch }}"
     - run: false
   test:
