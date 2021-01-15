@@ -40,5 +40,9 @@ jobs:
       run: basename a/b/c
     - name: dirname test
       run: basename $(dirname a/b/c)
-
-
+on:
+  push:
+    branches:
+    - '*'
+    tags-ignore:
+    - v*
